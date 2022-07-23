@@ -1,0 +1,34 @@
+{
+  "name": "@ch-cli-dev/command",
+  "version": "1.0.0",
+  "description": "ch-cli-dev command",
+  "author": "ch <chenhuan1@akulaku.com>",
+  "homepage": "https://github.com/ch250001757/ch-cli-dev#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ch250001757/ch-cli-dev.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/ch250001757/ch-cli-dev/issues"
+  },
+  "dependencies": {
+    "@ch-cli-dev/log": "file:../../utils/log",
+    "semver": "^7.3.5",
+    "colors": "^1.4.0"
+  }
+}

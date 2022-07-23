@@ -1,0 +1,43 @@
+{
+  "name": "@ch-cli-dev/init",
+  "version": "1.0.0",
+  "description": "ch-cli-dev init",
+  "author": "ch <250001757@qq.com>",
+  "homepage": "https://github.com/ch250001757/ch-cli-dev#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ch250001757/ch-cli-dev.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/ch250001757/ch-cli-dev/issues"
+  },
+  "dependencies": {
+    "@ch-cli-dev/command": "file:../../models/command",
+    "@ch-cli-dev/log": "file:../../utils/log",
+    "@ch-cli-dev/package": "file:../../models/package",
+    "@ch-cli-dev/request": "file:../../utils/request",
+    "@ch-cli-dev/utils": "file:../../utils/utils",
+    "ejs": "^3.1.5",
+    "fs-extra": "^9.0.1",
+    "glob": "^7.1.6",
+    "inquirer": "^7.3.3",
+    "kebab-case": "^1.0.1",
+    "semver": "^7.3.5",
+    "user-home": "^3.0.0"
+  }
+}
