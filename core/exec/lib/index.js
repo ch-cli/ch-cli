@@ -10,7 +10,6 @@ const SETTINGS = {
   // init: "@ch-cli-dev/init",
   init: "@imooc-cli/init", // test
 };
-
 const CACHE_DIR = "dependencies";
 
 // 1.targetPath > modulePath
@@ -50,6 +49,7 @@ async function exec() {
       await pkg.install();
     }
   } else {
+    console.log(888)
     pkg = new Package({
       targetPath,
       packageName,
@@ -59,7 +59,7 @@ async function exec() {
   const rootFile = pkg.getRootFilePath();
   // console.log(rootFile, "===rootFile");
   if (rootFile) {
-    try {
+    try {  
       // 当前进程中使用
       // require(rootFile).call(null, Array.from(arguments));
       const args = Array.from(arguments);
