@@ -25,15 +25,6 @@ function exec(command, args, options = {}) {
   return require("child_process").spawn(cmd, cmdArgs, options);
 }
 
-function exec(command, args, options = {}) {
-  // window 和 mac执行是不同的
-  const win32 = process.platform === "win32";
-  const cmd = win32 ? `cmd` : command;
-  // /c表示静默执行
-  const cmdArgs = win32 ? ["/c"].concat(command, args) : args;
-  return require("child_process").spawn(cmd, cmdArgs, options);
-}
-
 function execAsync(command, args, options = {}) {
   return new Promise((resolve, reject) => {
     const p = exec(command, args, options);

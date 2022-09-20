@@ -49,7 +49,6 @@ async function exec() {
       await pkg.install();
     }
   } else {
-    console.log(888)
     pkg = new Package({
       targetPath,
       packageName,
@@ -57,9 +56,8 @@ async function exec() {
     });
   }
   const rootFile = pkg.getRootFilePath();
-  // console.log(rootFile, "===rootFile");
   if (rootFile) {
-    try {  
+    try {
       // 当前进程中使用
       // require(rootFile).call(null, Array.from(arguments));
       const args = Array.from(arguments);
@@ -80,7 +78,7 @@ async function exec() {
       const code = `require('${rootFile}').call(null, ${JSON.stringify(args)})`;
       // const code = `console.log(1)`;  code = "console.log(1)" > node -e "console.log(1)"
       const child = spawn("node", ["-e", code], {
-        cwd: process.cwd(),
+        cwd: process.cwd(), // 当前执行路径
         stdio: "inherit",
       });
       child.on("error", (e) => {

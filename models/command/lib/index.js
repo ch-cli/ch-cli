@@ -3,7 +3,7 @@
 const semver = require("semver");
 const colors = require("colors/safe");
 const log = require("@ch-cli-dev/log");
-const LOWWEST_NODE_VERSION = "12.0.0";
+const LOWEST_NODE_VERSION = "12.0.0";
 
 class Command {
   constructor(argv) {
@@ -23,7 +23,7 @@ class Command {
         this.initArgs();
       });
       chain = chain.then(() => {
-        this.init();
+        this.init(); // 父类引用指向子类,普通方法相同时使用的是子类的方法
       });
       chain = chain.then(() => {
         this.exec();
@@ -43,7 +43,7 @@ class Command {
     // 第一步,获取当前node版本号
     // 第二部,比对最低版本号
     const currentVersion = process.version;
-    const lowestVersion = LOWWEST_NODE_VERSION;
+    const lowestVersion = LOWEST_NODE_VERSION;
     // semver 比对版本号 gte大于或者等于
     if (!semver.gte(currentVersion, lowestVersion)) {
       throw new Error(

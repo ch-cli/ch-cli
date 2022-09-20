@@ -185,7 +185,6 @@ function registerCommand() {
       console.log(`可用命令: ${availableCommands.join(", ")}`);
     }
   });
-
   program.parse(process.argv);
 
   if (program.args && program.args.length < 1) {

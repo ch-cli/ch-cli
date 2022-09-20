@@ -117,7 +117,7 @@ class Package {
         // 2. 读取package.json
         const pkgFile = require(path.resolve(dir, "package.json"));
         // console.log(pkgFile, "===pkgFile");
-        // 3. 寻找main/lib
+        // 3.package.json main字段 > 寻找main/lib
         if (pkgFile && pkgFile.main) {
           // 4. 路径的兼容(macOS/windows)
           return formatPath(path.resolve(dir, pkgFile.main));
